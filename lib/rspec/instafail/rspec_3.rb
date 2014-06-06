@@ -1,5 +1,4 @@
-require 'rspec/support'
-require 'rspec/core/formatters/progress_formatter'
+require 'rspec/core'
 
 module RSpec
   class Instafail < RSpec::Core::Formatters::ProgressFormatter
