@@ -6,7 +6,7 @@ module RSpec
 
   begin
     require "rspec/instafail/rspec_3"
-  rescue # try rspec 2
+  rescue LoadError # try rspec 2
     begin
       require "rspec/instafail/rspec_2"
     rescue LoadError # try rspec 1
