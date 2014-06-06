@@ -5,9 +5,13 @@ module RSpec
   $LOAD_PATH << lib unless $LOAD_PATH.include?(lib)
 
   begin
-    require "rspec/instafail/rspec_2"
-  rescue LoadError # try rspec 1
-    require "rspec/instafail/rspec_1"
+    require "rspec/instafail/rspec_3"
+  rescue # try rspec 2
+    begin
+      require "rspec/instafail/rspec_2"
+    rescue LoadError # try rspec 1
+      require "rspec/instafail/rspec_1"
+    end
   end
 
   require 'rspec/instafail/version'
